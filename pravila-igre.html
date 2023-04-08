@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Kružići</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" type="image/x-icon" href="slike/favicon.ico" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+    <link rel="stylesheet" href="./style.css" />
+  </head>
+
+  <body>
+    <div id="rezultat" class="rezultat" style="display: none">
+      <span>Trenutni rezultat: </span><span id="trenutniRezultat">0</span>
+    </div>
+
+    <div id="pocetnaOkvir">
+      <div class="pocetna-elementi">
+        <div style="width: 100%">
+          <div
+            style="
+              display: flex;
+              flex-direction: row;
+              justify-content: space-between;
+              align-items: center;
+            "
+          >
+            <h1 style="text-align: center">Pravila igre</h1>
+            <a
+              type="button"
+              class="btn btn-secondary"
+              data-container="body"
+              data-toggle="popover"
+              data-placement="left"
+              data-content="Nazad"
+              href="./index.html"
+            >
+              <i
+                id="info-ikonica"
+                class="fa fa-arrow-left"
+                aria-hidden="true"
+              ></i>
+            </a>
+          </div>
+          <div>
+            <hr />
+            <ul>
+              <li>
+                Igrica se sastoji od 3 razine koje su određene brzinom i brojem
+                protivničkih kružića.
+              </li>
+              <li>
+                Prilikom pokretanja igrice generiše se glavni kružić na centru
+                platna.
+              </li>
+              <li>
+                Igrač kontroliše kretanje glavnog kružića pomjeranjem miša.
+                Kružić se kreće preko platna tako što prati strelicu miša.
+              </li>
+              <li>
+                Igra započinje kada igrač pomjeri miš (tj. glavni kružić).
+              </li>
+              <li>
+                Osim glavnog kružića, u igri učestvuje i niz drugih protivničkih
+                kružića.
+              </li>
+              <li>
+                Ukoliko glavni kružić dodirne manji kružić, manji kružić
+                nestaje, a glavni kružić se povećava, kao i broj trenutno osvojenih bodova.
+              </li>
+              <li>
+                Ukoliko glavni kružić dodirne veći kružić, igrač gubi i igra se
+                završava.
+              </li>
+              <li>
+                Igrica sadrži 4 vrste "specijalnih" protivničkih kružića čiji
+                rub je označen crvenom bojom. Kada igrač dodirne specijalni
+                kružić, a ukoliko je zadovoljeno osnovno pravilo igrice da
+                glavni kružić može dodirnuti samo veći kružić kako se igra ne bi završila, desit će se jedna od sljedećih akcija:
+                <ul>
+                    <li>Brzina kretanja protivničkih kružića se duplo poveća u narednih nekoliko sekundi (od 1 do 10 sekundi);</li>
+                    <li>Glavni kružić postaje duplo veći;</li>
+                    <li>Glavni kružić postaje duplo manji;</li>
+                    <li>Smjer kretanja protivničkih kružića se mijenja;</li>
+                  </ul>
+              </li>
+              <li>Korisnik pobjeđuje kada broj osvojenih bodova bude 100 i više.</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script>
+      $(document).ready(function () {
+        $('[data-toggle="popover"]').popover({
+          trigger: "hover",
+        });
+      });
+    </script>
+  </body>
+</html>

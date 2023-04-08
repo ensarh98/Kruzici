@@ -1,0 +1,168 @@
+body {
+  margin: 0px;
+  font-family: Arial, Helvetica, sans-serif;
+  background-image: url('./slike/background.jpg');
+  background-repeat: repeat;
+  background-size: 100%;
+}
+
+h1 {
+  text-transform: uppercase;
+  color: #367ea0;
+}
+
+.rezultat {
+  position: fixed;
+  color: #367ea0;
+  font-weight: bolder;
+  margin-left: 5px;
+  margin-top: 5px;
+  font-size: 20px;
+}
+
+#pocetnaOkvir {
+  display: flex;
+  justify-content: center;
+  margin-top: 5vh;
+  margin-bottom: 5vh;
+}
+
+.pocetna-elementi {
+  background-color: white;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+  width: 70%;
+  border-radius: 10px;
+  border: 5px solid #adadad;
+}
+
+#pobjeda-bodovi,
+#poraz-bodovi {
+  font-size: 50px;
+  font-weight: bold;
+  margin-bottom: -4px;
+  margin-top: 5px;
+}
+
+.o-projektu {
+  font-size: 10px;
+  color: white;
+}
+
+.pocetna-col {
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+
+.pocetna-dugme {
+  background-color: #adadad;
+  width: 80%;
+  padding: 10px;
+  border-radius: 10px;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.start-ikonica {
+  font-size: 20px;
+  color: white;
+  margin-top: 5px;
+}
+
+.pocetna-dugme:hover {
+  background-color: #367ea0;
+}
+
+.pocetna-dugme text {
+  text-transform: uppercase;
+  font-weight: bolder;
+  color: white;
+}
+
+.bg-info {
+  background-color: #367ea0;
+  padding: 10px;
+  border-radius: 10px;
+}
+
+.footer-text {
+  text-transform: uppercase;
+  font-size: 8px;
+}
+
+.o-projektu-col {
+  display: flex;
+  flex-direction: column;
+}
+
+.igra {
+  display: none;
+}
+
+.logo {
+  width: 25vh;
+}
+
+.start-tekst {
+  text-transform: uppercase;
+  font-size: 15px;
+  font-weight: bold;
+  color: #367ea0;
+}
+
+#info-ikonica {
+  font-size: 40px;
+  color: #367ea0;
+}
+
+.alert {
+  text-align: center;
+}
+
+/* CSS rules for phones */
+@media only screen and (max-width: 480px) {
+  .pocetna-elementi {
+    width: 80%;
+  }
+
+  .o-projektu-col {
+    border-bottom: 1px solid #adadad;
+    width: 90%;
+    margin-left: 15px;
+    margin-bottom: 15px;
+  }
+}
+
+/* CSS rules for tablets */
+@media only screen and (min-width: 481px) and (max-width: 768px) {
+  .pocetna-elementi {
+    width: 80%;
+  }
+
+  .o-projektu-col {
+    border-bottom: 1px solid #adadad;
+    width: 90%;
+    margin-left: 15px;
+    padding-bottom: 10px;
+    padding-top: 10px;
+  }
+}
+
+/* CSS rules for desktops */
+@media only screen and (min-width: 769px) {
+  .pocetna-elementi {
+    width: 50%;
+  }
+
+  .o-projektu-col {
+    border-right: 1px solid #adadad;
+    height: 75px;
+  }
+}

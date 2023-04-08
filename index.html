@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Kružići</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" type="image/x-icon" href="slike/favicon.ico" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+    <link rel="stylesheet" href="./style.css" />
+  </head>
+
+  <body>
+    <div id="rezultat" class="rezultat" style="display: none">
+      <span>Trenutni rezultat: </span><span id="trenutniRezultat">0</span>
+    </div>
+
+    <div id="pocetnaOkvir">
+      <div class="pocetna-elementi">
+        <div style="width: 100%">
+          <div
+            style="
+              display: flex;
+              flex-direction: row;
+              justify-content: space-between;
+              align-items: center;
+            "
+          >
+            <h1 style="text-align: center">K r u ž i ć i</h1>
+
+            <a
+              type="button"
+              class="btn btn-secondary"
+              data-container="body"
+              data-toggle="popover"
+              data-placement="left"
+              data-content="Pravila igre"
+              href="./pravila-igre.html"
+            >
+              <i
+                id="info-ikonica"
+                class="fa fa-info-circle"
+                aria-hidden="true"
+              ></i>
+            </a>
+          </div>
+          <div id="konacniRezultat" style="display: none">
+            <hr />
+            <div
+              id="pobjeda-alert"
+              class="alert alert-success"
+              role="alert"
+              style="display: none"
+            >
+              <span style="font-size: 20px"
+                ><b>Čestitamo! Pobijedili ste!</b></span
+              ><br />
+              <span>Ostvareni broj bodova</span><br />
+              <span id="pobjeda-bodovi"><b>0</b></span>
+            </div>
+            <div
+              id="poraz-alert"
+              class="alert alert-danger"
+              role="alert"
+              style="display: none"
+            >
+              <span style="font-size: 20px"
+                ><b>Ups, žao nam je, izgubili ste...</b></span
+              ><br />
+              <span>Ostvareni broj bodova</span><br />
+              <span id="poraz-bodovi"><b>0</b></span>
+            </div>
+          </div>
+          <hr />
+          <div class="row" style="text-align: center; margin-bottom: 17px">
+            <text id="start-tekst" class="start-tekst"
+              >Odaberite razinu i pokrenite igricu!</text
+            >
+          </div>
+          <div
+            style="
+              display: flex;
+              flex-direction: row;
+              justify-content: space-between;
+            "
+          >
+            <div id="level1" class="pocetna-col">
+              <div class="pocetna-dugme">
+                <text>Početna</text>
+                <i class="fa fa-play start-ikonica" aria-hidden="true"></i>
+              </div>
+            </div>
+            <div id="level2" class="pocetna-col">
+              <div class="pocetna-dugme">
+                <text>Srednja</text>
+                <i class="fa fa-play start-ikonica" aria-hidden="true"></i>
+              </div>
+            </div>
+            <div id="level3" class="pocetna-col">
+              <div class="pocetna-dugme">
+                <text>Napredna</text>
+                <i class="fa fa-play start-ikonica" aria-hidden="true"></i>
+              </div>
+            </div>
+          </div>
+          <hr />
+          <div>
+            <div class="bg-info o-projektu">
+              <div class="row" style="padding: 5px">
+                <div class="col-lg-4 col-md-12 col-sm-12 o-projektu-col">
+                  <span class="footer-text"
+                    >Stručni studij - Informacione tehnologije</span
+                  >
+                  <!-- Slika preuzeta sa: https://pmf.unsa.ba/wp-content/uploads/2021/03/Prirodno-matematicki-fakultet-logo.png -->
+                  <img src="./slike/logo.png" class="logo" />
+                </div>
+                <div class="col-lg-4 col-md-6 col-sm-6 o-projektu-col">
+                  <div style="width: fit-content">
+                    <i
+                      class="fa fa-thumb-tack"
+                      aria-hidden="true"
+                      style="margin-right: 10px"
+                    ></i
+                    ><span><b>Web Programiranje</b></span>
+                    <br />
+                    <br />
+                    <span style="margin-left: 17px">Profesor: </span
+                    ><span>prof. dr. Elmedin Selmanović</span>
+                    <br />
+                    <span style="margin-left: 17px">Asistent: </span
+                    ><span>Malek Chahin</span>
+                  </div>
+                </div>
+                <div class="col-lg-4 col-md-6 col-sm-6 o-projektu-col">
+                  <div style="width: fit-content">
+                    <i
+                      class="fa fa-thumb-tack"
+                      aria-hidden="true"
+                      style="margin-right: 10px"
+                    ></i
+                    ><span><b>Projekat "Kružići"</b></span>
+                    <br />
+                    <br />
+                    <span style="margin-left: 17px">Autor: </span
+                    ><span>Ensar Horozović</span>
+                    <br />
+                    <i
+                      class="fa fa-envelope"
+                      aria-hidden="true"
+                      style="margin-right: 7px"
+                    ></i
+                    ><span>ensarhorozovic@gmail.com</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <canvas id="canvas" style="display: none"></canvas>
+    <script type="text/javascript" src="./index.js"></script>
+    <script>
+      $(document).ready(function () {
+        $('[data-toggle="popover"]').popover({
+          trigger: "hover",
+        });
+      });
+    </script>
+  </body>
+</html>
